@@ -50,16 +50,20 @@ struct MomentsView: View {
 
     private var pathItems: some View {
         ForEach(moments) { moment in
-            Text(moment.title)
+            NavigationLink{
+                MomentDetailView(moment:moment)
+            } label:{
+                Text(moment.title)
+            }
         }
     }
 }
 
-//
-//#Preview {
-//    MomentsView()
-//        .sampleDataContainer()
-//}
+
+#Preview {
+    MomentsView()
+        .sampleDataContainer()
+}
 
 #Preview("No moments") {
     MomentsView()
